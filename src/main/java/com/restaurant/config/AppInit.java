@@ -1,19 +1,17 @@
-package re.mvc.config;
-import org.springframework.lang.Nullable;
+package com.restaurant.config;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class Applnit extends AbstractAnnotationConfigDispatcherServletInitializer {
-    @org.jetbrains.annotations.Nullable
+public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
+
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        // cấu hình servlet
         return new Class[0];
     }
 
-    @Nullable
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{WedConfig.class};
+        return new Class[]{AppConfig.class};
     }
 
     @Override

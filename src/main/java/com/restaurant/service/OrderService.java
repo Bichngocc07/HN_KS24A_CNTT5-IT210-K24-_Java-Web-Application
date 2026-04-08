@@ -1,15 +1,24 @@
 package com.restaurant.service;
 
-import org.springframework.stereotype.Repository;
+import com.restaurant.repository.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-@Repository
-public class OrderRepository {
+@Service
+public class OrderService {
+
+    private final OrderRepository orderRepository;
+
+    @Autowired
+    public OrderService(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
 
     public String getAllOrders() {
-        return "Danh sách toàn bộ đơn hàng";
+        return orderRepository.getAllOrders();
     }
 
     public String getOrderById(long id) {
-        return "Thông tin đơn hàng với id = " + id;
+        return orderRepository.getOrderById(id);
     }
 }
